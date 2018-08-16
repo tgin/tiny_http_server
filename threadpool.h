@@ -2,7 +2,7 @@
 #define _THREADPOOL_H 
 
 typedef struct threadpool_t threadpool_t;
-
+#include<pthread.h>
 
 
 /*
@@ -43,6 +43,11 @@ void* threadpool_thread(void* threadpool);
 void* adjust_thread(void* threadpool);
 
 
+
+int is_thread_alive(pthread_t tid);
+
+
+int threadpool_free(threadpool_t* pool);
 #endif
 
 
